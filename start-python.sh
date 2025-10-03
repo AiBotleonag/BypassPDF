@@ -1,0 +1,1 @@
+#!/usr/bin/env bashpython python-bot/app/main.py
