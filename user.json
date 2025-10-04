@@ -1,0 +1,13 @@
+{
+    "users": {},
+    "statistics": {
+        "total_users": 0,
+        "processed_files": 0,
+        "active_sessions": 0
+    },
+    "settings": {
+        "maintenance_mode": false,
+        "max_file_size": 10485760,
+        "allowed_formats": ["pdf", "txt", "jpg", "png"]
+    }
+}

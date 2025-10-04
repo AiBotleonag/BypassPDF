@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  telegram-bot:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./user.json:/var/www/html/user.json
+      - ./error.log:/var/www/html/error.log
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - WEBHOOK_URL=${WEBHOOK_URL}
+      - DATABASE_URL=${DATABASE_URL}
+    restart: unless-stopped
+    
+    # Set file permissions
+    command: >
+      sh -c "chown -R www-data:www-data /var/www/html 
+             && chmod 666 /var/www/html/user.json 
+             && chmod 666 /var/www/html/error.log 
+             && apache2-foreground"
