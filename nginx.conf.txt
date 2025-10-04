@@ -1,8 +1,0 @@
-events{}
-http{
-  server{
-    listen 80;
-    location /python { proxy_pass http://python-bot:8443; }
-    location /php    { proxy_pass http://php-bot; }
-  }
-}
